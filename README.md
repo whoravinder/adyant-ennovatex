@@ -5,7 +5,7 @@
 - **Team name** - Adyant
 - **Team members (Names)** - Ravinder Singh, Smriti Mahajan
 - **Demo Video Link** - <a href='https://www.youtube.com/watch?v=sWSLtMNXp-Q'>https://www.youtube.com/watch?v=sWSLtMNXp-Q</a><br>
-  Note: Timings reference in video for results: 2:17 for Software ; 5:00 for hardware; 6:30 for integrated, however the complete video is demonstration+explanation of the results
+  Note: Timings reference in video for results: 2:17min for Software ; 5:00min for hardware; 6:30min for integrated, however the complete video is demonstration+explanation of the results
 
 
 ### Project Artefacts
