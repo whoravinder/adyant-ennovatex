@@ -1,13 +1,11 @@
 # Technical Documentation
 
-Feel free to add any number of markdown files in this folder that can help us better understand your solution.
-You can include the following (not an exhaustive list, feel free to add more):
-- Your approach to solve this problem and what makes it unique
-- Technical Stack - List of OSS libraries/projects used along with their links
-- The technical architecture of your solution
-- Implementation details
-- Installation instructions
-- User guide
-- Salient features of the project
+Please click on the links below to refer documentation of the provided solution
+- [Visual Results](visual_results.md)
+- [Flow and Architecture](flowandarch.md)
+- [Installation Guide](installation.md)
+- [Novelty and Approach](novelty_and_approach.md)
+- [Problem Statement to Solution](pstosolution.md)
+- [Tech Stack](techstack.md)
 
-Note: Kindly add screenshots wherever possible.
+
