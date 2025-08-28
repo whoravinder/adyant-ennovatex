@@ -4,31 +4,35 @@ This repository contains three components:
 1. **Software Pipeline** → 3GPP-compliant dataset generation, AI model training & evaluation.  
 2. **Hardware Pipeline** → ESP32 + HC-SR04 ultrasonic sensor streaming real range data.  
 3. **Integrated Pipeline** → Combines hardware + AI estimator + Generative AI predictor with live dashboard.  
-
+**Note : Hardware and Software components are independent of each other and are combined in Integrated Pipeline**
 ---
 
 ## 1️⃣ Software Pipeline
 
 ### Installation
 ```bash
-git clone https://github.com/your-repo/uav-isac.git
-cd uav-isac/software_pipeline
-python -m venv uav_env
-source ../uav_env/bin/activate      # Linux/Mac
-..\uav_env\Scripts\activate         # Windows
-pip install -r ../requirements.txt
+Cloning the repo: git clone https://github.com/whoravinder/adyant-ennovatex.git
+Change your working directory to src folder
+Run the following PIP Command:
+pip install -r requirements.txt
 ```
-
+### Software Directory
+After cloning, change your working directory to src-> software.  
 ### Usage
 1. **Generate Datasets**
 ```bash
 python generate_dataset.py
 ```
-Creates `datasets/adyant_isac_UMi.h5`, `adyant_isac_UMa.h5`, etc.
+Creates `datasets/adyant_isac_UMi.h5`, `adyant_isac_UMa.h5`, etc.<br>
+Note: No need to run this file as there is already a dataset folder inside software directory, it includes all the datasets used however this command can help regenerate the dataset or if there is no dataset folder then it will generate the datasets. 
 
 2. **Train Model**
 ```bash
 python train.py
+
+you may find the following line
+torch.save(model.state_dict(), "adyant_uav_estimator.pth")
+Here you can change *adyant_uav_estimator* to your desired name
 ```
 Trains UAVEstimator and saves as `adyant_uav_estimator.pth`.
 
@@ -43,7 +47,7 @@ Outputs metrics + plots:
 
 ---
 
-## 2️⃣ Hardware Pipeline
+## 2️⃣ Hardware Pipeline [If you have ESP32 WROOM and HC-SR04 Ultrasonic sensor then you may use Hardware else software is enough to demonstrate the solution]
 
 ### Hardware Requirements
 - ESP32-WROOM Dev board  
@@ -68,7 +72,7 @@ Outputs metrics + plots:
 2. Install **ESP32 board package** in Arduino IDE.  
 3. Open and upload:
 ```bash
-hardware_pipeline/esp32_ultrasonic.ino
+hardware/esp32_ultrasonic.ino
 ```
 Select `ESP32 Dev Module` + correct COM port → Upload.  
 
@@ -82,7 +86,12 @@ Select `ESP32 Dev Module` + correct COM port → Upload.
 ```bash
 python data_receiver.py
 ```
-Outputs live **Range (cm)**, **Velocity (cm/s)**, **Synthetic DOA (°)**.  
+Outputs live distance from Ultrasonic sensor
+
+```bash
+python hardware_demo.py
+```
+Outputs live **Range (cm)**, **Velocity (cm/s)**, **Synthetic DOA (°)**. 
 
 ---
 
@@ -92,24 +101,14 @@ This combines **hardware stream + AI Estimator + Generative Predictor** into one
 
 ---
 
-### Installation
-```bash
-git clone https://github.com/your-repo/uav-isac.git
-cd uav-isac/integrated_pipeline
-python -m venv uav_env
-source ../uav_env/bin/activate      # Linux/Mac
-..\uav_env\Scripts\activate         # Windows
-pip install -r ../requirements.txt
-```
 
----
 
 ### Usage
 1. Flash ESP32 with firmware (`esp32_ultrasonic.ino`).  
 2. Connect ESP32 to USB.  
 3. Run integrated demo:
 ```bash
-python integrated_hardware_ai.py
+python integrated.py
 ```
 
 ---
@@ -120,12 +119,11 @@ The dashboard shows 3 stacked plots in real time:
    - Blue = Raw UAV Path  
    - Red dashed = AI Estimator Path  
    - Green dashed = Predicted Future Path (with ghost trails)  
-
 2. **Time-Series Plot (last 30s)**  
    - AI-estimated Range, Velocity, DOA  
-
 3. **Error Plot (last 30s)**  
-   - Difference (Raw − AI) for Range, Velocity, DOA  
+   - Difference (Raw − AI) for Range, Velocity, DOA
 
----
+Note : <br>
+Integrated Folder have two important files one is the ai model trained in software pipeline and another is `ai_model.py` file this are required files to run the integrated pipeline
 
