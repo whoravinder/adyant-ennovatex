@@ -10,3 +10,9 @@ This figure shows Range Root Mean Square Error, Velocity Mean Absolute Error and
 **3.Predicted v/s Actual Path(UAV Trajectory)** <br>
 ![Software 3](images/soft3.png)<br>
 This figure shows UAV Trajectory where red is of predicted and blue is of original. 
+
+# Hardware Prototype Screenshot
+**Hardware recieving values from Ultrasonic Sensor**
+![Software 3](images/hard1.png)<br>
+Note: Only the Distance is captured from ultrasonic sensor, velocity is calculated from distance and time and DOA is induced synthetically.
+
