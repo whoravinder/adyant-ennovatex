@@ -4,7 +4,7 @@
 - **Problem Statement** - Estimation of UAV Parameters Using Monostatic Sensing in ISAC Scenario(PS-7)
 - **Team name** - Adyant
 - **Team members (Names)** - Ravinder Singh, Smriti Mahajan
-- **Demo Video Link** - *(Upload the Demo video on Youtube as a public or unlisted video and share the link. Google Drive uploads or any other uploads are not allowed.)*
+- **Demo Video Link** - <a href='https://www.youtube.com/watch?v=sWSLtMNXp-Q'>https://www.youtube.com/watch?v=sWSLtMNXp-Q</a>
 
 
 ### Project Artefacts
